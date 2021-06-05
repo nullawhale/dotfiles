@@ -3,6 +3,7 @@ export EDITOR=nvim
 
 export GOPATH=$HOME/.go
 export GOROOT=/usr/lib/go
+export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
