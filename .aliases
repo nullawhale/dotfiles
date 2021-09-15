@@ -33,3 +33,4 @@ alias wh='watch -n 0.1 ls -lh .'
 
 alias glow="glow -p"
 
+alias lg="lazygit"

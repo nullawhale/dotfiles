@@ -7,8 +7,9 @@ set softtabstop=4
 set shortmess=atI
 set smarttab
 
-set t_Co=256
+set guifont=Fira\ Code\ Retina
 
+set t_Co=256
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'w0ng/vim-hybrid'
@@ -21,10 +22,12 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'neovim/nvim-lspconfig'
 Plug 'racer-rust/vim-racer'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'fatih/vim-go'
 if has('nvim-0.5')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 end
@@ -89,3 +92,6 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 colorscheme hybrid
+
+hi Normal ctermbg=none
+hi NonText ctermbg=none

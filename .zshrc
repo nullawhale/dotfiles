@@ -3,6 +3,7 @@ export EDITOR=nvim
 
 export GOPATH=$HOME/.go
 export GOROOT=/usr/lib/go
+export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
@@ -105,25 +106,6 @@ pk () {
   fi
 }
 
-pull_all () {
-  for r in *(/); do
-    if [[ -d "$r/.git" ]]; then
-      echo $fg[yellow]$r$reset_color
-      git -C "$r" pull --rebase --autostash
-    fi
-    if [[ -d "$r/.hg" ]]; then
-      echo $fg[yellow]$r$reset_color
-      function () {
-        hg -R "$r" shelve
-        local shelve_status=$?
-        hg -R "$r" pull --update --rebase
-        if [[ $shelve_status -eq 0 ]]; then
-          hg -R "$r" unshelve
-        fi
-      }
-    fi
-  done
-}
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
