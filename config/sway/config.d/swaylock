@@ -1,0 +1,4 @@
+set $lock_bg /usr/share/backgrounds/sway/arch_kis_blur.png
+
+bindsym $mod+Ctrl+l exec swaylock --hide-keyboard-layout -C $HOME/.config/swaylock/config -i $lock_bg
+

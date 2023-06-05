@@ -1,0 +1,7 @@
+set $ps1 Alt+Ctrl+2
+set $ps2 Alt+Ctrl+3
+set $ps3 Alt+Ctrl+4
+
+bindsym $ps1 exec grim - | wl-copy
+bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
+bindsym $ps3 exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png

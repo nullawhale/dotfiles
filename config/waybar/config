@@ -1,0 +1,91 @@
+{
+	"position": "bottom",
+	"font": "JetBrains Mono",
+	"height": 30,
+	"modules-left": [
+		"sway/workspaces"
+	],
+	"modules-center": ["tray"],
+	"modules-right": [
+		"custom/layout",
+		"custom/vpn",
+		"network",
+		"cpu",
+		"memory",
+		"pulseaudio",
+		"clock",
+		"custom/power"
+	],
+	"tray": {
+		"icon-size": 17,
+		"spacing": 10
+	},
+	// Modules configuration
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{icon}",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": []
+		},
+		"format-icons": {
+			"1": " term",
+			"2": " web",
+			"3": " code",
+			"4": " others",
+			"5": " vpn"
+		}
+	},
+	"custom/power": {
+		"format": "",
+		"on-click": "$HOME/.config/waybar/shutdown.sh"
+	},
+	"custom/layout": {
+		"exec": "swaymsg -mrt subscribe '[\"input\"]' | jq -r --unbuffered \"select(.change == \\\"xkb_layout\\\") | .input | select(.type == \\\"keyboard\\\") | .xkb_active_layout_name | .[0:2]\"",	
+		"format": "{}"
+	},
+	"clock": {
+		"format": " {:%H:%M %d.%m.%Y}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	},
+	"cpu": {
+        "format": " {usage}%"
+    },
+	"memory": {
+        "format": " {}%"
+    },
+	"network": {
+		"format-wifi": " {essid}",
+		"format-ethernet": "",
+		"format-linked": "(No IP) ",
+		"format-disconnected": "⚠",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"custom/vpn": {
+		"interval": 5,
+		"format": "{}",
+	    "return-type": "json",
+	    "exec": "$HOME/.config/waybar/vpn_status.sh",
+	    "on-click": "$HOME/.config/waybar/vpn.sh",
+    },
+	"pulseaudio": {
+		"format": "{icon} {volume}  {source_volume}",
+		"format-muted": " Muted",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pavucontrol"
+	}
+}

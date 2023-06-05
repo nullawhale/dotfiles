@@ -1,0 +1,79 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "JetBrains Mono";
+	font-size: 14px;
+	min-height: 0;
+}
+
+window#waybar {
+	background: transparent;
+	color: white;
+}
+
+#tray {
+	background: #121214;
+	border-radius: 5px;
+	margin: 0 5px 5px 5px;
+	padding: 5px;
+}
+
+#tray menu {
+	background: #121214;
+	border: 1px solid #121214;
+	border-radius: 5px;
+	box-shadow: none;
+}
+
+tooltip {
+	border-radius: 5px;
+	background: #121214;
+	opacity: 1;
+}
+
+#workspaces {
+	background: transparent;
+	margin: 0 5px 5px 5px;
+	border-radius: 5px;
+}
+
+#workspaces button {
+	background: #121214;
+	padding: 5px 10px;
+	box-shadow: none;
+	color: #c0caf5;
+	border-bottom: 3px solid transparent;
+}
+
+#workspaces button.urgent {
+	background: #121214;
+}
+
+#workspaces button.focused {
+	box-shadow: none;
+	color: white;
+	border-bottom: 3px solid #458588;
+}
+
+#workspaces button:hover {
+	color: #458588;
+}
+
+#custom-date, #clock, #battery, #pulseaudio,
+#network, #custom-layout, #cpu, #memory, #custom-vpn {
+	color: #c0caf5;
+	background: #121214;
+	padding: 5px 10px;
+	margin: 0 0 5px 0;
+}
+
+#custom-power {
+	color: #c0caf5;
+	padding: 5px 10px;
+	margin: 0 0 5px 0;
+}
+
+#custom-power:hover {
+	color: black;
+}
+

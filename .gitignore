@@ -1,0 +1,12 @@
+.zsh_work
+
+.*
+!.gitignore
+!.vim
+autoload/plug.vim
+autoload/plug.vim.old
+plugged/
+plugins.vim
+
+*.py[cod]
+view/

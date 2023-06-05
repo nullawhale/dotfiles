@@ -1,0 +1,7 @@
+# Format
+background-color=#151515
+border-color=#505050
+border-radius=5
+default-timeout=5000
+font=JetBrains Mono 10
+padding=10,10
