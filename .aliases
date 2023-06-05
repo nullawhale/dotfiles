@@ -1,0 +1,45 @@
+# Aliases
+alias l='ls -l --color=auto'
+alias grep='grep --colour=auto'
+alias -s {avi,mpeg,mpg,mov,m2v,mp4}=mpv
+alias -s {odt,doc,sxw,rtf}=openoffice.org
+autoload -U pick-web-browser
+alias -s {html,htm}=chromium
+
+alias e='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias mvn4='mvn clean install -T 4 -DskipTests'
+alias hlol='hg log -G -b . --template "{label('\''yellow'\'', rev)} {label('\''red'\'', shortest(node, 6))} -{label('\''yellow'\'', ifeq(branch, '\''default'\'', '\'\'', '\'' {branch}'\''))}{label('\''yellow'\'', if(tags, '\'' (tags: {join(tags, \'\'', \'\'')})'\''))}{label('\''yellow'\'', if(bookmarks, '\'' [bookmarks: {join(bookmarks, \'\'', \'\'')}]'\''))} {desc|strip|firstline} {label('\''green'\'', '\''({date|age})'\'')} {label('\''blue'\'', '\''<{author|person}>'\'')}\n"'
+
+# Base pacman
+alias Syu='sudo pacman -Syu'
+alias Sy='sudo pacman -Sy'
+alias Su='sudo pacman -Su'
+alias Ss='pacman -Ss'
+alias pS='sudo pacman -S'
+
+alias o='open_command'
+
+alias dcd='docker-compose down'
+alias dcdv='docker-compose down -v'
+alias dcu='docker-compose up'
+alias dcud='docker-compose up -d'
+alias fullupdate='docker-compose down&&docker-compose up -d'
+
+alias c='xclip -selection clipboard'
+alias wa='watch -n 0.1 ls -la .'
+alias wh='watch -n 0.1 ls -lh .'
+
+alias glow="glow -p"
+
+alias lg="lazygit"
+
+# create and open folder
+gnb () {
+  git checkout master
+  git checkout -b $1
+  git push origin $1
+  git branch -a
+}
+
